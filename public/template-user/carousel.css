@@ -1,0 +1,83 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  background-color: transparent;
+}
+
+.carousel__header {
+  color: var(--dark-green);
+}
+
+.carousel__slider {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.carousel__slider__container {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.carousel__slider__container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slider__container__item {
+  position: relative;
+  scroll-snap-align: start;
+  min-width: 100%;
+  opacity: 0.3;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.carousel__slider__container__item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel__slider__container__item figcaption {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  color: #FFFFFF;
+  width: 50%;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.carousel__slider__container__item__caption button {
+  white-space: nowrap;
+}
+
+.carousel__slider__container__item img {
+  width: 100%;
+  border-radius: .4rem;
+}
+
+.carousel__slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.carousel__slider__dots button {
+  background-color: var(--grey);
+  border: none;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: background-color 0.5s ease;
+}
+
+.carousel__slider__dots button.active {
+  background-color: black;
+}

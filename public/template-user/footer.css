@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'OrganettoUltraBold';
+  src: url('../fonts/organetto/Fontspring-DEMO-organetto-ultrabold.otf') format('opentype');
+}
+
+.footer__social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  padding: 1rem 5%;
+}
+
+.footer__links a {
+  font-family: 'OrganettoUltraBold', 'Segoe UI';
+  color: #3D3D3D;
+}
+
+footer p {
+  color: #3D3D3D;
+  font-size: .7rem;
+  padding: 1rem 5%;
+  text-align: center;
+}
+
+@media screen and (min-width: 720px) {
+  .footer__social-media {
+    font-size: 2rem;
+  }
+
+  .footer__links a {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    font-size: .9rem;  
+  }
+}

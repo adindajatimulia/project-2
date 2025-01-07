@@ -75,6 +75,7 @@
 </section>
 
 <section class="category-item">
+    <h2 class="carousel__header font-organetto">Semua Makanan</h2>
     <div class="category-item__navigation">
         @foreach (['Rekomendasi', 'Populer', 'Koleksi'] as $nav)
             <button class="font-organetto {{ $loop->first ? 'active' : '' }}">{{ $nav }}</button>
@@ -82,13 +83,13 @@
     </div>
     <div class="category-item__container">
         @foreach ([
-            ['name' => 'Tempe Bacem', 'price' => 'Rp. 25.000'],
-            ['name' => 'Sate Telur Puyuh', 'price' => 'Rp. 25.000'],
-            ['name' => 'Bakwan Sayur', 'price' => 'Rp. 25.000'],
-            ['name' => 'Bakwan Jagung', 'price' => 'Rp. 20.000'],
-            ['name' => 'Sate Ayam', 'price' => 'Rp. 25.000']
+            ['id' => 1, 'name' => 'Tempe Bacem', 'price' => 'Rp. 25.000', 'category' => 'makanan', 'best_seller' =>  true],
+            ['id' => 2, 'name' => 'Sate Telur Puyuh', 'price' => 'Rp. 25.000', 'category' => 'makanan', 'best_seller' =>  false],
+            ['id' => 3, 'name' => 'Bakwan Sayur', 'price' => 'Rp. 25.000', 'category' => 'makanan', 'best_seller' =>  true],
+            ['id' => 4, 'name' => 'Bakwan Jagung', 'price' => 'Rp. 20.000', 'category' => 'makanan', 'best_seller' =>  false],
+            ['id' => 5, 'name' => 'Sate Ayam', 'price' => 'Rp. 25.000', 'category' => 'makanan', 'best_seller' =>  true]
         ] as $item)
-            <figure class="card">
+            <a href="/menu/{{ $item['category'] }}/{{ $item['id'] }}" class="card">
                 <img src="https://cdn0-production-images-kly.akamaized.net/EAbi53ClPFWop0gOwkZQS0J9Rjc=/1x135:1000x698/1200x675/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/4703886/original/010040500_1704118595-shutterstock_2290464261.jpg" alt="{{ $item['name'] }}" />
                 <figcaption>
                     <button>{{ $item['name'] }}</button>
@@ -97,7 +98,10 @@
                         <p>{{ $item['price'] }}</p>
                     </div>
                 </figcaption>
-            </figure>
+                @if ($item['best_seller'])
+                    <img class="card__best-seller" src="/icons/best-seller.svg" alt="">
+                @endif
+            </a>
         @endforeach
     </div>
 </section>

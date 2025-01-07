@@ -8,13 +8,21 @@ const searchButton = document.querySelector('.search-button');
 const closeButtons = document.querySelectorAll('.popup__header button');
 const popupSearch = document.querySelector('.popup-search');
 const popupCart = document.querySelector('.popup-cart');
-const popupMenuDetail = document.querySelector('.popup-menu-detail');
-const cards = document.querySelectorAll('.card');
+const dropdownToggle = document.querySelector('.dropdown');
+const dropdownMenu = document.querySelector('.dropdown-menu');
 
-cards.forEach((card) => {
-  card.addEventListener('click', () => {
-    popupMenuDetail.classList.add('open');
-  });
+dropdownToggle.addEventListener('click', () => {
+  if (dropdownMenu.classList.contains('show')) {
+    dropdownMenu.classList.remove('show');
+  } else {
+    dropdownMenu.classList.add('show');
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    dropdownMenu.classList.remove('show');
+  }
 });
 
 searchButton.addEventListener('click', () => {

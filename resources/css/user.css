@@ -21,8 +21,8 @@
 }
 
 @font-face {
-  font-family: 'AvenirLTProBold';
-  src: url('../fonts/avenir/AvenirLTProBold.otf') format('opentype');
+  font-family: 'AvenirLTProMedium';
+  src: url('../fonts/avenir/AvenirLTProMedium.otf') format('opentype');
 }
 
 * {
@@ -48,18 +48,46 @@
   z-index: 2;
 }
 
-.app-bar__logo img{
-  width: 100%;
+.app-bar ul > li:last-child {
+  position: relative;
 }
 
 .app-bar__logo{
-  width: 6rem;
+  width: 2.8rem;
+}
+
+.app-bar__logo img{
+  width: 100%;
 }
 
 .app-bar ul {
   display: flex;
   list-style: none;
   gap: 1rem;
+}
+
+ul.dropdown-menu {
+  position: absolute;
+  top: 105%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: .5rem 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+ul.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
 }
 
 .app-bar ul li button,
@@ -69,6 +97,20 @@
   border: none;
   font-size: 1.3rem;
   cursor: pointer;
+}
+
+ul.dropdown-menu li button {
+  font-family: 'AvenirLTProLight';
+  color: #333;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+ul.dropdown-menu li button.active {
+  font-family: 'AvenirLTProMedium';
+  color: var(--dark-green);
 }
 
 section {
@@ -276,6 +318,14 @@ figure.second {
   border-radius: 1.2rem;
 }
 
+.card .card__best-seller {
+  position: absolute;
+  right: .3rem;
+  top: .3rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 .card figcaption {
   border-radius: 1.2rem;
   position: absolute;
@@ -409,6 +459,10 @@ figure.second {
   display: flex;
   justify-content: space-between;
   background-color: #FFFFFF;
+}
+
+.popup__header > img {
+  width: 3rem;
 }
 
 .popup__header button {
@@ -645,7 +699,7 @@ figure.second {
   color: black;
   border-top: 1px solid #ccc;
   padding: 0.5rem 0;
-  font-family: 'AvenirLTProBold';
+  font-family: 'AvenirLTProMedium';
 }
 
 .summary-table .total-row .label {
@@ -660,6 +714,10 @@ figure.second {
 
   .carousel__slider__container__item figcaption button {
     font-size: 1.2rem;
+  }
+
+  .app-bar__logo {
+    width: 4rem;
   }
 }
 
@@ -684,6 +742,9 @@ figure.second {
     font-size: 2rem;
   }
 
+  ul.dropdown-menu {
+    gap: 0;
+  }
   .carousel__slider__container {
     height: calc(100vh - 145px - 2rem);
   }
@@ -695,7 +756,7 @@ figure.second {
   }
 
   .carousel{
-    gap: 2rem;
+    gap: .8rem;
   }
 
   .carousel__slider__container__item figcaption {

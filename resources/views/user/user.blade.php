@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CWB Resto</title>
+    <link rel="apple-touch-icon" href="/icons/logo.png">
+    <link rel="icon" href="/icons/logo.png">
+
+    <title>Buitenhof</title>
     @vite(['resources/css/user.css'])
-    <!-- <link rel="stylesheet" type="text/css" href="{{asset('template-user')}}/user.css"> -->
   </head>
   <body>
     <header class="app-bar">
-      <div class="app-bar__logo"> <img src="../icons/logo.jpeg" alt=""></div>
+      <div class="app-bar__logo">
+        <img src="/icons/logo.png" alt="">
+      </div>
       <nav id="navigationDrawer" class="app-bar__navigation">
         <ul>
           <li>
@@ -22,10 +26,14 @@
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </li>
-          <li>
-            <a href="/">
-              <i class="fa-solid fa-circle-info"></i>
-            </a>
+          <li class="dropdown">
+            <button class="dropdown-button">
+              <i class="fa-solid fa-globe"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><button class="active" data-lang="id"><img src="/icons/indonesia-flag.svg" alt=""> Indonesia</button></li>
+              <li><button data-lang="en"><img src="/icons/english-flag.svg" alt=""> English</button></li>
+            </ul>
           </li>
         </ul>
       </nav>
@@ -36,7 +44,7 @@
 
       <div class="popup-search">
         <div class="popup__header">
-          <img src="" />
+          <img src="/icons/logo.png" />
           <button>
             <i class="fa-solid fa-x"></i>
           </button>
@@ -68,7 +76,7 @@
 
       <div class="popup-cart">
         <div class="popup__header">
-          <img src="" />
+          <img src="/icons/logo.png" />
           <h2>
             <i class="fa-solid fa-cart-shopping"></i>Keranjang
           </h2>

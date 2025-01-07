@@ -3,20 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CWB Resto</title>
+    <link rel="apple-touch-icon" href="/icons/logo.png">
+    <link rel="icon" href="/icons/logo.png">
+    <title>Buitenhof</title>
     @vite(['resources/css/home.css'])
     @vite(['resources/css/carousel.css'])
   </head>
   <body>
     <header class="app-bar">
       <div class="app-bar__logo">
-        <img src="" alt="Logo" />
+        <img src="/icons/logo.png" alt="Logo" />
       </div>
       <nav id="navigationDrawer" class="app-bar__navigation">
         <ul>
           <li><a href="#">Profile</a></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">Contact</a></li>
+          <li class="dropdown">
+            <button>
+              Language
+              <span class="dropdown-arrow"></span>
+            </button>
+            <ul>
+              <li>
+                <button class="active"><img src="/icons/indonesia-flag.svg" alt=""> Indonesia</button>
+              </li>
+              <li>
+                <button><img src="/icons/english-flag.svg" alt=""> English</button>
+              </li>
+            </ul>
+          </li>
           <li><a href="/menu">Order Now</a></li>
         </ul>
       </nav>

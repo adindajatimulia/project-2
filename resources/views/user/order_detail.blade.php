@@ -3,6 +3,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CWB Resto</title>
+  <link rel="apple-touch-icon" href="/icons/logo.png">
+  <link rel="icon" href="/icons/logo.png">
   @vite(['resources/css/order-detail.css'])
 </head>
 <body>
@@ -11,7 +13,7 @@
   </header>
   <main class="invoice">
     <div class="invoice__header">
-      <img src="/icons/logo.svg">
+      <img src="/icons/logo.png">
     </div>
     <h2 class="font-organetto">STRUK PEMBAYARAN</h2>
     <table class="invoice__payment">
@@ -88,6 +90,7 @@
 
   <footer>
     <p>Sambil menunggu pesanan, Anda dapat membaca <a href="/">sejarah kafe kami</a>.</p>
+    <button id="share">Share</button>
     <button id="downloadPDF">Unduh PDF</button>
   </footer>
   @vite(['resources/js/user/order_detail.js'])
